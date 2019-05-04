@@ -1,3 +1,2 @@
 # gitLearning
-learn to use git  
-this is my first to record
+this is zhuqian187's learning git and python repo.
