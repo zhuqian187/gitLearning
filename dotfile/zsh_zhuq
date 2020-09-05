@@ -1,0 +1,23 @@
+### aliases
+alias rm='rm -i'
+
+### os
+alias chromium-browser='nohup /usr/bin/chromium-browser 2>&1 > /dev/null &'
+alias zhuq='cd /Data/zhuq'
+
+### golang
+alias goland='nohup /opt/GoLand-2019.2.5/bin/goland.sh 2>&1 > /dev/null &'
+alias eclipse='nohup /opt/eclipse/eclipse 2>&1 > /dev/null &'
+export GOROOT="/usr/local/go"
+export GOPATH="/Data/go"
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn,direct
+export PATH=$PATH:${GOROOT}/bin:${GOPATH}/bin
+
+### terraform
+
+### tencentcloud
+[[ -f ~/.zsh_tencentcloud ]]&&source ~/.zsh_tencentcloud
+
+### alicloud
+[[ -f ~/.zsh_alicloud ]]&&source ~/.zsh_alicloud
