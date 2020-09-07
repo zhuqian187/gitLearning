@@ -1,2 +1,2 @@
 # gitLearning
-this is zhuqian187's learning git and python repo.
+this is zhuqian187's learning git and Awesome commit.
