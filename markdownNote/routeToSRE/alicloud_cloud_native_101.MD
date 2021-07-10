@@ -47,6 +47,31 @@
 4. Helm 测试
 5. 命令行语法
 
+helm 按照以下的顺序安装 k8s 资源。
+
+有点意思的特性：
+
+1. 自动滚动部署。[sha256sum](https://helm.sh/zh/docs/howto/charts_tips_and_tricks/) 方法保证在另一个文件发生更改时更新负载说明；
+2. 建议遵循 [SemiVersion](https://github.com/Masterminds/semver) 规范；
+3. 如果期待，使用 helm dependencies，大概率需要一个中心端的 charts repo 仓库，将 charts 放置在中心端的仓库里，进行援引，不过，需要考虑的是，依赖 charts 的环境参数配置注入的问题，子 charts values 也许可以搞定这个事情，但是需要验证；
+
+helm 期待的目录结构：
+
+```
+wordpress/
+  Chart.yaml          # 包含了chart信息的YAML文件
+  LICENSE             # 可选: 包含chart许可证的纯文本文件
+  README.md           # 可选: 可读的README文件
+  values.yaml         # chart 默认的配置值
+  values.schema.json  # 可选: 一个使用JSON结构的values.yaml文件
+  charts/             # 包含chart依赖的其他chart
+  crds/               # 自定义资源的定义
+  templates/          # 模板目录， 当和values 结合时，可生成有效的Kubernetes manifest文件
+  templates/NOTES.txt # 可选: 包含简要使用说明的纯文本文件
+```
+
+
+
 #### oam
 
 四条cli开发原则：
